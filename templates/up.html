@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>How To Make Custom File Upload Button in HTML | CSS & JavaScript</title>
+    <link rel="stylesheet" href="style1.css">
+    <script>
+        var i=0;
+        var j=0;
+        function divchange()
+        {
+            var divtag=document.getElementById("divi");
+            var bgcolor=["purple","yellow","blue","brown"];
+            var txtcolor=["red","black","gray","yellow"];
+            divtag.style.backgroundColor=bgcolor[i];
+            divtag.style.color=txtcolor[j];
+            i=(i+1)%bgcolor.length;
+            j=(j+1)%txtcolor.length;
+
+        }
+        setInterval(divchange,1000);
+    </script>
+    <style>
+        #divi
+        {
+            border: 2px solid red;
+            background-color:cyan;
+            height: 130px;
+            width: 400px;
+            border-radius: 10px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>  
+  
+  <form class="form">
+    <center>
+        <h1>Thanks for Visiting our website plese check the link below for download options</h1>
+         <hr/>
+         <br/>
+         <br/>
+         <div id="divi">
+            <br/>
+            <h1>
+                Welcome to our website <br/> Please check the links 
+            </h1>
+        </div>
+    </center>
+    <div class="file-upload-wrapper" data-text="Select your file!">
+      <input name="file-upload-field" type="file" class="file-upload-field" value="">
+    </div>
+  </form>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="js.js"></script>
+</body>
+</html>
+

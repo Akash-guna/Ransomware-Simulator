@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+            var i=0;
+            var j=0;
+            function divchange()
+            {
+                var divtag=document.getElementById("divi");
+                var bgcolor=["purple","yellow","blue","brown"];
+                var txtcolor=["red","black","gray","yellow"];
+                divtag.style.backgroundColor=bgcolor[i];
+                divtag.style.color=txtcolor[j];
+                i=(i+1)%bgcolor.length;
+                j=(j+1)%txtcolor.length;
+
+            }
+            setInterval(divchange,1000);
+        </script>
+        <style>
+            #divi
+            {
+                border: 2px solid red;
+                background-color:cyan;
+                height: 130px;
+                width: 400px;
+                border-radius: 10px;
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <h1>FREE KASPERSKY FOREVER !!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
+             <hr/>
+             <br/>
+             <br/>
+             <div id="divi">
+                <br/>
+                <h1>
+                    CLICK BELOW TO DOWNLOAD
+                </h1>
+            </div>
+        </center>
+        <br/>
+        <br/>
+        <br/>
+        <a href="/downloadkaspersky">
+            Download
+            <i class="fa fa-download"></i>
+        </a>
+        <p>Download Software</p>
+    
+    </body>
+</html>
