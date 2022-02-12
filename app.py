@@ -13,28 +13,6 @@ def keystore():
     shutil.make_archive('decrypter', 'zip',"decryption" )
     return "success"
 
-@app.route("/decrypt",methods=["POST"])
-def decrypt():
-    with open('filekey1.key', 'rb') as filekey:
-        key = filekey.read()
-
-    fernet = Fernet(key)
-    
-    # opening the encrypted file
-    #with open('nba.csv', 'rb') as enc_file:
-    #    encrypted = enc_file.read()
-    json = request.get_json()
-    encrypted = json['encrypted']
-
-    # decrypting the file
-    decrypted = fernet.decrypt(encrypted)
-    
-    # opening the file in write mode and
-    # writing the decrypted data
-    with open('nba.csv', 'wb') as dec_file:
-        dec_file.write(decrypted)
-    return send_file('nba.csv')
-
 @app.route("/home",methods=["GET"])
 def home():
     return render_template("dload.html")
